@@ -20,7 +20,10 @@ public class Client implements Comparable<Client> {
         if (String.valueOf(phoneNumber).matches(regexForPhoneNumber)) {
             this.phoneNumber = phoneNumber;
         } else {
-            logger.error("Input incorrect email from \"" + name + "\"");
+            ExceptionIncorrectPhoneNumber exceptionIncorrectPhoneNumber = new ExceptionIncorrectPhoneNumber();
+
+            logger.error(exceptionIncorrectPhoneNumber.print() + " from \"" + name + "\"");
+            logger.debug(exceptionIncorrectPhoneNumber.print());
             phoneNumber = 0;
         }
 
@@ -29,6 +32,7 @@ public class Client implements Comparable<Client> {
         } else {
             ExceptionIncorrectEmail exceptionIncorrectEmail = new ExceptionIncorrectEmail();
             logger.error(exceptionIncorrectEmail.print() + " from \"" + name + "\"");
+            logger.debug(exceptionIncorrectEmail.print()  + " from \"" + name + "\"");
             email = null;
         }
 
