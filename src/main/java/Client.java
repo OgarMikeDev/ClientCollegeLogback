@@ -20,14 +20,15 @@ public class Client implements Comparable<Client> {
         if (String.valueOf(phoneNumber).matches(regexForPhoneNumber)) {
             this.phoneNumber = phoneNumber;
         } else {
-            logger.error("Phone number incorrect from \"" + name + "\"");
+            logger.error("Input incorrect email from \"" + name + "\"");
             phoneNumber = 0;
         }
 
         if (email.contains("@")) {
             this.email = email;
         } else {
-            logger.error("Email input incorrect from \"" + name + "\"");
+            ExceptionIncorrectEmail exceptionIncorrectEmail = new ExceptionIncorrectEmail();
+            logger.error(exceptionIncorrectEmail.print() + " from \"" + name + "\"");
             email = null;
         }
 
