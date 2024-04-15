@@ -26,14 +26,19 @@ public class Main {
         Client clientEight = new Client(
                 "Andy", 16, 89676400948l, "grigorov.a.g@mail.ru");
 
+        Client clientNine = new Client(
+                "Andy", 16, 89676400948l, "grigorov.a.g@mail.ru");
+
+        while (true) {
         System.out.println("Input on the console command \"PrintInformationAboutClients\", \"Remove\":");
-        String command = new Scanner(System.in).nextLine();
-        if (command.equals("PrintInformationAboutClients")) {
-            Client.printInformationAboutClients();
-        } else if (command.equals("Remove")) {
-            System.out.println("Input criterion for remove client: ");
-            long number = new Scanner(System.in).nextLong();
-            Client.removeClient(number);
+            String command = new Scanner(System.in).nextLine();
+            if (command.equals("PrintInformationAboutClients")) {
+                Client.printInformationAboutClients();
+            } else if (command.equals("Remove")) {
+                System.out.println("Input criterion for remove client: ");
+                long number = new Scanner(System.in).nextLong();
+                Client.removeClient(number);
+            }
         }
     }
 }

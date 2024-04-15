@@ -65,7 +65,7 @@ public class Client implements Comparable<Client> {
             Client client = clientIterator.next();
             if (client.getPhoneNumber() == phoneNumber) {
                 System.out.println("Client \"" + client.getName() + "\" removed");
-                setClients.remove(client);
+                clientIterator.remove();
             }
         }
     }
