@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Client implements Comparable<Client> {
-    private static TreeSet<Client> setClients = new TreeSet<>();
+    private static ArrayList<Client> setClients = new ArrayList<>();
     private String name; //Mike
     private int age; //23
     private long phoneNumber; //89676400941
@@ -31,7 +31,9 @@ public class Client implements Comparable<Client> {
             email = null;
         }
 
-        if (phoneNumber != 0 && email != null && !setClients.contains(this)) {
+        if (phoneNumber != 0 &&
+                email != null &&
+                !setClients.contains(this)) {
             setClients.add(this);
             logger.info(this.toString());
         }
@@ -89,6 +91,19 @@ public class Client implements Comparable<Client> {
                 clientIterator.remove();
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return age == client.age && phoneNumber == client.phoneNumber && Objects.equals(name, client.name) && Objects.equals(regexForPhoneNumber, client.regexForPhoneNumber) && Objects.equals(email, client.email) && Objects.equals(logger, client.logger);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, phoneNumber, regexForPhoneNumber, email, logger);
     }
 
     @Override
