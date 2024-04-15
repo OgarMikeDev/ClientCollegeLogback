@@ -1,0 +1,40 @@
+11:32:57.321 [main] INFO  Main - Name "Vadim"
+Age "32"
+Phone number "89676400941"
+Email "sotnikov.v.v@mail.ru".
+
+11:32:57.325 [main] INFO  Main - Name "Alex"
+Age "39"
+Phone number "89676400942"
+Email "rybyhin.a.v@mail.ru".
+
+11:32:57.325 [main] INFO  Main - Name "Seva"
+Age "30"
+Phone number "89676400943"
+Email "ostrovscki.v.a@mail.ru".
+
+11:32:57.325 [main] INFO  Main - Name "Rad"
+Age "14"
+Phone number "89676400944"
+Email "juravlev.r.k@mail.ru".
+
+11:32:57.325 [main] INFO  Main - Name "Sasha"
+Age "20"
+Phone number "89676400945"
+Email "karpinskiy.v.v@mail.ru".
+
+11:32:57.325 [main] INFO  Main - Name "Ulyana"
+Age "16"
+Phone number "89676400946"
+Email "frolova.u.i@mail.ru".
+
+11:32:57.326 [main] INFO  Main - Name "Dima"
+Age "17"
+Phone number "89676400947"
+Email "minosyan.d.v@mail.ru".
+
+11:32:57.326 [main] INFO  Main - Name "Andy"
+Age "16"
+Phone number "89676400948"
+Email "grigorov.a.g@mail.ru".
+

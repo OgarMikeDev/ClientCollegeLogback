@@ -29,6 +29,12 @@ public class Main {
         Client clientNine = new Client(
                 "Andy", 16, 89676400948l, "grigorov.a.g@mail.ru");
 
+        Client clientTen = new Client(
+                "Mike", 23, 89676400948l, "muramail.ru");
+
+        Client clientEleven = new Client(
+                "Gregory", 26, 89676400948111111l, "avosin@mail.ru");
+
         while (true) {
         System.out.println("Input on the console command \"PrintInformationAboutClients\", \"Remove\":");
             String command = new Scanner(System.in).nextLine();

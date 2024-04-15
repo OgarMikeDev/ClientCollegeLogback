@@ -1,18 +1,40 @@
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Client implements Comparable<Client> {
     private static TreeSet<Client> setClients = new TreeSet<>();
     private String name; //Mike
     private int age; //23
     private long phoneNumber; //89676400941
+    private String regexForPhoneNumber = "8[0-9]{10}";
     private String email; //mura.m.v@mail.ru
+
+    Logger logger = LoggerFactory.getLogger(Main.class);
 
     public Client(String name, int age, long phoneNumber, String email) {
         this.name = name;
         this.age = age;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        setClients.add(this);
+
+        if (String.valueOf(phoneNumber).matches(regexForPhoneNumber)) {
+            this.phoneNumber = phoneNumber;
+        } else {
+            logger.error("Phone number incorrect from \"" + name + "\"");
+            phoneNumber = 0;
+        }
+
+        if (email.contains("@")) {
+            this.email = email;
+        } else {
+            logger.error("Email input incorrect from \"" + name + "\"");
+            email = null;
+        }
+
+        if (phoneNumber != 0 && email != null && !setClients.contains(this)) {
+            setClients.add(this);
+            logger.info(this.toString());
+        }
     }
 
     public String getName() {
@@ -50,7 +72,6 @@ public class Client implements Comparable<Client> {
     @Override
     public int compareTo(Client o) {
         return getName().compareTo(o.getName());
-
     }
 
     public static void printInformationAboutClients() {
